@@ -38,9 +38,9 @@
 [ext_resource type="Texture2D" uid="uid://chpaxdv6o6irt" path="res://player/slide/Warrior-Slide_3.png" id="36_dx5ib"]
 [ext_resource type="Texture2D" uid="uid://cbxcl31paekvl" path="res://player/slide/Warrior-Slide_4.png" id="37_a2xo5"]
 [ext_resource type="Texture2D" uid="uid://cgybox7jfni3h" path="res://player/slide/Warrior-Slide_5.png" id="38_art4l"]
-[ext_resource type="Texture2D" uid="uid://dwocc0gj6hfvh" path="res://player/wall_slide/Warrior_WallSlide_1.png" id="39_a2xo5"]
+[ext_resource type="Texture2D" uid="uid://bo2b72klsyro6" path="res://player/wall_slide/Warrior_WallSlide_1.png" id="39_55jnj"]
 [ext_resource type="Texture2D" uid="uid://br72nav0225iy" path="res://player/wall_slide/Warrior_WallSlide_2.png" id="40_art4l"]
-[ext_resource type="Texture2D" uid="uid://2w5tpmi74jj6" path="res://player/wall_slide/Warrior_WallSlide_3.png" id="41_fjxoa"]
+[ext_resource type="Texture2D" uid="uid://bv1rqvtv4ulf" path="res://player/wall_slide/Warrior_WallSlide_3.png" id="41_fjxoa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rptt4"]
 animations = [{
@@ -192,7 +192,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("39_a2xo5")
+"texture": ExtResource("39_55jnj")
 }, {
 "duration": 1.0,
 "texture": ExtResource("40_art4l")
@@ -217,7 +217,6 @@ position = Vector2(5.615, -21.115)
 sprite_frames = SubResource("SpriteFrames_rptt4")
 animation = &"wall"
 autoplay = "idle"
-frame_progress = 0.83197474
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=512301822]
 position = Vector2(0, -17)
