@@ -71,6 +71,38 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_a2xo5")
+}],
+"loop": false,
+"name": &"attack_1",
+"speed": 27.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5ejfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jd2rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q28gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ge24q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pnw6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1so5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_55jnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dx5ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a2xo5")
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_art4l")
@@ -82,13 +114,8 @@ animations = [{
 "texture": ExtResource("13_gswnw")
 }],
 "loop": false,
-"name": &"attack_1",
-"speed": 22.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"attack_2",
+"speed": 25.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -208,12 +235,15 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r7pn3"]
 height = 36.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hitbox"]
+size = Vector2(30, 24)
+
 [node name="Node2D" type="CharacterBody2D" unique_id=1344897844]
 collision_layer = 2
 script = ExtResource("1_wodsf")
 
 [node name="Animations" type="AnimatedSprite2D" parent="." unique_id=1048871884]
-position = Vector2(5.615, -21.115)
+position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_rptt4")
 animation = &"wall"
 autoplay = "idle"
@@ -221,3 +251,13 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=512301822]
 position = Vector2(0, -17)
 shape = SubResource("CapsuleShape2D_r7pn3")
+
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=1427980393]
+position = Vector2(25, -20)
+collision_layer = 5
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=1791794950]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_hitbox")
+debug_color = Color(0.956863, 0.266667, 0.282353, 0.419608)
