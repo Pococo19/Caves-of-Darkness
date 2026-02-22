@@ -1,40 +1,41 @@
 [gd_scene format=3 uid="uid://ci03u6jbommjo"]
 
-[ext_resource type="Texture2D" uid="uid://djpdu7k56c5g0" path="res://background/swordhp.png" id="1_m7ell"]
+[ext_resource type="Texture2D" uid="uid://bmy1ev1wgd13y" path="res://tileset/select_game_HUD_0002_health_frame-1.png.png" id="1_kdjhy"]
+[ext_resource type="Texture2D" uid="uid://dxhkcx4agitwi" path="res://tileset/sword1.png" id="2_kdjhy"]
 
 [node name="GameScreen" type="CanvasLayer" unique_id=29179053]
 scale = Vector2(0.965, 0.965)
 transform = Transform2D(0.965, 0, 0, 0.965, 0, 0)
 
 [node name="HealthBar" type="Node2D" parent="." unique_id=324281592]
-scale = Vector2(0.19, 0.19)
+scale = Vector2(0.165, 0.165)
 
-[node name="Hp1" type="Sprite2D" parent="HealthBar" unique_id=7079801]
-position = Vector2(276, -31.999998)
-scale = Vector2(0.55, 0.55)
-texture = ExtResource("1_m7ell")
-flip_v = true
+[node name="SelectGameHud0002HealthFrame1_png" type="Sprite2D" parent="HealthBar" unique_id=1522251631]
+position = Vector2(471.0315, 314.021)
+scale = Vector2(4.486, 3.131)
+texture = ExtResource("1_kdjhy")
 
-[node name="Hp2" type="Sprite2D" parent="HealthBar" unique_id=1890664971]
-position = Vector2(474.99997, -31.999998)
-scale = Vector2(0.55, 0.55)
-texture = ExtResource("1_m7ell")
-flip_v = true
+[node name="Sword1" type="Sprite2D" parent="HealthBar" unique_id=1007015684]
+position = Vector2(182.13257, 251.2168)
+scale = Vector2(0.725, 0.725)
+texture = ExtResource("2_kdjhy")
 
-[node name="Hp3" type="Sprite2D" parent="HealthBar" unique_id=1941304160]
-position = Vector2(374, -31.999996)
-scale = Vector2(0.55, 0.55)
-texture = ExtResource("1_m7ell")
-flip_v = true
+[node name="Sword2" type="Sprite2D" parent="HealthBar" unique_id=1356240285]
+position = Vector2(320.30176, 251.2168)
+scale = Vector2(0.725, 0.725)
+texture = ExtResource("2_kdjhy")
 
-[node name="Hp4" type="Sprite2D" parent="HealthBar" unique_id=1806330300]
-position = Vector2(173.99997, -31.999998)
-scale = Vector2(0.55, 0.55)
-texture = ExtResource("1_m7ell")
-flip_v = true
+[node name="Sword3" type="Sprite2D" parent="HealthBar" unique_id=147959155]
+position = Vector2(452.19116, 251.2168)
+scale = Vector2(0.725, 0.725)
+texture = ExtResource("2_kdjhy")
 
-[node name="Hp5" type="Sprite2D" parent="HealthBar" unique_id=849893029]
-position = Vector2(576, -31.999998)
-scale = Vector2(0.55, 0.55)
-texture = ExtResource("1_m7ell")
-flip_v = true
+[node name="Sword4" type="Sprite2D" parent="HealthBar" unique_id=1907640968]
+position = Vector2(596.64014, 251.21655)
+scale = Vector2(0.725, 0.725)
+texture = ExtResource("2_kdjhy")
+
+[node name="Sword5" type="Sprite2D" parent="HealthBar" unique_id=540649952]
+position = Vector2(747.36914, 251.21655)
+scale = Vector2(0.725, 0.725)
+texture = ExtResource("2_kdjhy")
