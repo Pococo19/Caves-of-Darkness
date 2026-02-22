@@ -38,9 +38,10 @@
 [ext_resource type="Texture2D" uid="uid://chpaxdv6o6irt" path="res://player/slide/Warrior-Slide_3.png" id="36_dx5ib"]
 [ext_resource type="Texture2D" uid="uid://cbxcl31paekvl" path="res://player/slide/Warrior-Slide_4.png" id="37_a2xo5"]
 [ext_resource type="Texture2D" uid="uid://cgybox7jfni3h" path="res://player/slide/Warrior-Slide_5.png" id="38_art4l"]
-[ext_resource type="Texture2D" uid="uid://bo2b72klsyro6" path="res://player/wall_slide/Warrior_WallSlide_1.png" id="39_55jnj"]
-[ext_resource type="Texture2D" uid="uid://br72nav0225iy" path="res://player/wall_slide/Warrior_WallSlide_2.png" id="40_art4l"]
-[ext_resource type="Texture2D" uid="uid://bv1rqvtv4ulf" path="res://player/wall_slide/Warrior_WallSlide_3.png" id="41_fjxoa"]
+[ext_resource type="Texture2D" uid="uid://del0tvebmml2b" path="res://player/wall_slide/Warrior_WallSlide_1.png" id="39_55jnj"]
+[ext_resource type="Texture2D" uid="uid://w7g0xc2hm1xi" path="res://player/wall_slide/Warrior_WallSlide_2.png" id="40_art4l"]
+[ext_resource type="Texture2D" uid="uid://cjs0p2co1wagf" path="res://player/wall_slide/Warrior_WallSlide_3.png" id="41_fjxoa"]
+[ext_resource type="Texture2D" uid="uid://fhuhbix056au" path="res://tileset/elev_lamp_glow.png" id="42_art4l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rptt4"]
 animations = [{
@@ -262,12 +263,6 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_hitbox")
 debug_color = Color(0.956863, 0.266667, 0.282353, 0.419608)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, -20)
-enabled = true
-energy = 2.5
-blend_mode = 0
-range_layer_min = -512
-range_layer_max = 512
-shadow_enabled = false
-texture_scale = 4.0
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=585761083]
+energy = 3.5
+texture = ExtResource("42_art4l")

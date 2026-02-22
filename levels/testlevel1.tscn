@@ -9619,6 +9619,14 @@ sources/14 = SubResource("TileSetAtlasSource_e8x85")
 sources/15 = SubResource("TileSetAtlasSource_3sqny")
 sources/16 = SubResource("TileSetAtlasSource_sycc6")
 
+[sub_resource type="Environment" id="Environment_ad6qy"]
+background_mode = 3
+glow_enabled = true
+fog_enabled = true
+volumetric_fog_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 0.55
+
 [node name="Level" type="Node2D" unique_id=846687810]
 
 [node name="Background" type="Node2D" parent="." unique_id=1849943580]
@@ -9767,7 +9775,7 @@ position = Vector2(-164.80002, -50.799988)
 collision_layer = 128
 
 [node name="skeleton" parent="." unique_id=515678505 instance=ExtResource("20_rvrsf")]
-position = Vector2(-364.12354, -257.00302)
+position = Vector2(-363.12354, -257.00302)
 
 [node name="skeleton2" parent="." unique_id=1792613656 instance=ExtResource("20_rvrsf")]
 position = Vector2(832.6765, -353.803)
@@ -9852,3 +9860,8 @@ texture = ExtResource("21_ad6qy")
 position = Vector2(891.4099, -393.72433)
 scale = Vector2(0.23196933, 0.19821286)
 texture = ExtResource("21_ad6qy")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1753313576]
+environment = SubResource("Environment_ad6qy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1350019282]
