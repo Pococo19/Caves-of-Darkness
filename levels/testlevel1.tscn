@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://be6f1vi6vl2v4" path="res://enemies/slime.tscn" id="16_beyeq"]
 [ext_resource type="Texture2D" uid="uid://1x0s50pm35ki" path="res://tileset/Cave - Floor 1.png" id="16_tgqhy"]
 [ext_resource type="PackedScene" uid="uid://m56mo8ux3tjt" path="res://enemies/Skeleton/skeleton.tscn" id="20_rvrsf"]
+[ext_resource type="Texture2D" uid="uid://c3a6nbrnlyqp6" path="res://tileset/Cave_-_SmallRock1-removebg-preview.png" id="21_ad6qy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvrsf"]
 texture = ExtResource("8_qj5dw")
@@ -5984,7 +5985,6 @@ texture_region_size = Vector2i(32, 32)
 16:12/0 = 0
 17:12/0 = 0
 18:12/0 = 0
-19:12/0 = 0
 22:12/0 = 0
 23:12/0 = 0
 24:12/0 = 0
@@ -7765,6 +7765,9 @@ texture_region_size = Vector2i(32, 32)
 61:62/0 = 0
 62:62/0 = 0
 63:62/0 = 0
+19:12/next_alternative_id = 2
+19:12/0 = 0
+19:12/1 = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sycc6"]
 texture = ExtResource("15_qaneh")
@@ -9740,12 +9743,12 @@ tile_map_data = PackedByteArray("AADH//3/DQACAAcAAADH//7/DQACAAgAAADH////DQACAAk
 tile_set = SubResource("TileSet_oi3di")
 
 [node name="Node2D" parent="." unique_id=358387626 instance=ExtResource("14_7yatv")]
-position = Vector2(32, -75.72)
+position = Vector2(-622.5097, -42.131485)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=1513919437]
 offset = Vector2(0, -8.195)
 limit_left = -635
-limit_top = -410
+limit_top = -399
 limit_right = 1115
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
@@ -9774,3 +9777,78 @@ position = Vector2(112.17648, -301.00302)
 
 [node name="Slime2" parent="." unique_id=2322101 instance=ExtResource("16_beyeq")]
 position = Vector2(512.57654, -262.50302)
+
+[node name="CaveSmallRock1RemovebgPreview" type="Sprite2D" parent="." unique_id=1725661235]
+position = Vector2(-569.5901, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview2" type="Sprite2D" parent="." unique_id=672374641]
+position = Vector2(1080.4099, -393.7243)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview3" type="Sprite2D" parent="." unique_id=99358664]
+position = Vector2(-384.59012, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview4" type="Sprite2D" parent="." unique_id=1393692464]
+position = Vector2(-125.590126, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview5" type="Sprite2D" parent="." unique_id=1578627201]
+position = Vector2(-107.590126, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview6" type="Sprite2D" parent="." unique_id=1460710514]
+position = Vector2(-236.59009, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview7" type="Sprite2D" parent="." unique_id=1459685102]
+position = Vector2(1413.4099, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview8" type="Sprite2D" parent="." unique_id=1977006565]
+position = Vector2(-51.590088, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview9" type="Sprite2D" parent="." unique_id=364367004]
+position = Vector2(207.40985, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview10" type="Sprite2D" parent="." unique_id=975550903]
+position = Vector2(225.40985, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview11" type="Sprite2D" parent="." unique_id=1122897788]
+position = Vector2(429.4099, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview12" type="Sprite2D" parent="." unique_id=654887107]
+position = Vector2(2079.41, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview13" type="Sprite2D" parent="." unique_id=469540259]
+position = Vector2(614.4099, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview14" type="Sprite2D" parent="." unique_id=1847044505]
+position = Vector2(873.4099, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
+
+[node name="CaveSmallRock1RemovebgPreview15" type="Sprite2D" parent="." unique_id=1395634543]
+position = Vector2(891.4099, -393.72433)
+scale = Vector2(0.23196933, 0.19821286)
+texture = ExtResource("21_ad6qy")
