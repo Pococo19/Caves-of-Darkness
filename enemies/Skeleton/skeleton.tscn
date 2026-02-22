@@ -2,11 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dfvn3co7avx02" path="res://enemies/Skeleton/Sprite Sheets/Skeleton Hit.png" id="1_odbwd"]
 [ext_resource type="Script" uid="uid://0xa5cqh1mdag" path="res://enemies/Skeleton/skeleton.gd" id="1_wvr7w"]
-[ext_resource type="Texture2D" uid="uid://dlvcksbl5sc33" path="res://background/elev_lamp_glow.png" id="2_2p70b"]
 [ext_resource type="Texture2D" uid="uid://d3sncpe8h8t5m" path="res://enemies/Skeleton/Sprite Sheets/Skeleton Idle.png" id="2_760x0"]
 [ext_resource type="Texture2D" uid="uid://cdxe6bu5ccxdf" path="res://enemies/Skeleton/Sprite Sheets/Skeleton Walk.png" id="3_fandg"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_liwix"]
+[ext_resource type="Texture2D" uid="uid://fhuhbix056au" path="res://tileset/elev_lamp_glow.png" id="5_2p70b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8xgm"]
 atlas = ExtResource("1_odbwd")
@@ -260,13 +258,6 @@ radius = 11.25
 scale = Vector2(1.335, 1.335)
 script = ExtResource("1_wvr7w")
 
-[node name="ElevLampGlow" type="Sprite2D" parent="." unique_id=1973602293]
-self_modulate = Color(0.58437884, 0.58437884, 0.58437884, 1)
-material = SubResource("ShaderMaterial_liwix")
-position = Vector2(2.0000002, -20.000002)
-scale = Vector2(1.06, 1.06)
-texture = ExtResource("2_2p70b")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1433943786]
 sprite_frames = SubResource("SpriteFrames_t1mgd")
 animation = &"hurt"
@@ -284,5 +275,10 @@ shape = SubResource("CapsuleShape2D_pypc6")
 position = Vector2(-1.25, -14.525)
 shape = SubResource("CapsuleShape2D_s7tlk")
 debug_color = Color(0.855344, 0.36880258, 7.70092e-07, 0.41960785)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1078298470]
+visible = false
+energy = 2.9
+texture = ExtResource("5_2p70b")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
