@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ci03u6jbommjo"]
+
+[ext_resource type="Texture2D" uid="uid://djpdu7k56c5g0" path="res://background/swordhp.png" id="1_m7ell"]
+
+[node name="GameScreen" type="CanvasLayer" unique_id=29179053]
+scale = Vector2(0.965, 0.965)
+transform = Transform2D(0.965, 0, 0, 0.965, 0, 0)
+
+[node name="HealthBar" type="Node2D" parent="." unique_id=324281592]
+scale = Vector2(0.19, 0.19)
+
+[node name="Hp1" type="Sprite2D" parent="HealthBar" unique_id=7079801]
+position = Vector2(276, -31.999998)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_m7ell")
+flip_v = true
+
+[node name="Hp2" type="Sprite2D" parent="HealthBar" unique_id=1890664971]
+position = Vector2(474.99997, -31.999998)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_m7ell")
+flip_v = true
+
+[node name="Hp3" type="Sprite2D" parent="HealthBar" unique_id=1941304160]
+position = Vector2(374, -31.999996)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_m7ell")
+flip_v = true
+
+[node name="Hp4" type="Sprite2D" parent="HealthBar" unique_id=1806330300]
+position = Vector2(173.99997, -31.999998)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_m7ell")
+flip_v = true
+
+[node name="Hp5" type="Sprite2D" parent="HealthBar" unique_id=849893029]
+position = Vector2(576, -31.999998)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_m7ell")
+flip_v = true

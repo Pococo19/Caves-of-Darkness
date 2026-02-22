@@ -115,10 +115,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yc4o"]
-size = Vector2(25, 14)
+size = Vector2(25, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7i8v"]
-size = Vector2(28.5, 14.75)
+size = Vector2(28.5, 13.75)
 
 [node name="Slime" type="CharacterBody2D" unique_id=360651525]
 script = ExtResource("1_3yc4o")
@@ -132,14 +132,14 @@ frame_progress = 1.0
 offset = Vector2(0, -11.555)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=501495389]
-position = Vector2(0.5, -7)
+position = Vector2(0.5, -7.5)
 shape = SubResource("RectangleShape2D_3yc4o")
-debug_color = Color(0.1848008, 0.6428053, 0, 0.41960785)
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=889533736]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1381267480]
-position = Vector2(0.75, -7.375)
+position = Vector2(0.75, -7.875)
 shape = SubResource("RectangleShape2D_f7i8v")
+debug_color = Color(0.84912896, 0.3747278, 0, 0.41960785)
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

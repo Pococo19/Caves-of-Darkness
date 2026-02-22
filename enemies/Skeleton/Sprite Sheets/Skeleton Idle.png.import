@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjs0p2co1wagf"
-path="res://.godot/imported/Warrior_WallSlide_3.png-8c7f86ae501c2774dfbbeec872b545b8.ctex"
+uid="uid://d3sncpe8h8t5m"
+path="res://.godot/imported/Skeleton Idle.png-9ca0d4028fe377155c6cad54bc2ea17f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/wall_slide/Warrior_WallSlide_3.png"
-dest_files=["res://.godot/imported/Warrior_WallSlide_3.png-8c7f86ae501c2774dfbbeec872b545b8.ctex"]
+source_file="res://enemies/Skeleton/Sprite Sheets/Skeleton Idle.png"
+dest_files=["res://.godot/imported/Skeleton Idle.png-9ca0d4028fe377155c6cad54bc2ea17f.ctex"]
 
 [params]
 

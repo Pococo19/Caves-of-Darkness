@@ -261,3 +261,13 @@ collision_mask = 8
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_hitbox")
 debug_color = Color(0.956863, 0.266667, 0.282353, 0.419608)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -20)
+enabled = true
+energy = 2.5
+blend_mode = 0
+range_layer_min = -512
+range_layer_max = 512
+shadow_enabled = false
+texture_scale = 4.0

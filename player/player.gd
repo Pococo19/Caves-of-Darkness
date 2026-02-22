@@ -5,8 +5,8 @@ extends CharacterBody2D
 
 const GRAVITY = 1000
 const WALL_GRAVITY = 800
-const SPEED = 250
-const SLIDE_SPEED = 510
+const SPEED = 180
+const SLIDE_SPEED = 300
 const JUMP = -400
 const WALL_JUMP = -450
 const WALL_JUMP_PUSH = 400
