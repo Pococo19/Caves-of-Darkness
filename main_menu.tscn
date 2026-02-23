@@ -39,7 +39,7 @@ grow_vertical = 2
 theme_override_constants/separation = 15
 
 [node name="Freepik1920x1080SubterraneanCaveScenePixelisedDepth17765" type="Sprite2D" parent="VBoxContainer" unique_id=1903169960]
-position = Vector2(274.23996, 180.23996)
+position = Vector2(274.23996, 158.23997)
 scale = Vector2(0.62843746, 0.471211)
 texture = ExtResource("3_fu7sn")
 
