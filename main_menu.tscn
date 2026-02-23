@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cemrb5gacbvvl"]
 
 [ext_resource type="Script" uid="uid://p76jfofku8mh" path="res://script/main_menu.gd" id="1_m3r4o"]
-[ext_resource type="Texture2D" uid="uid://p61gtj0na5p1" path="res://0.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://bug7aeng4o8hj" path="res://enemies/Skeleton/Sprite Sheets/freepik__pixelated-cave-background-with-layered-stalactites__17764.png" id="2_7vrkn"]
 
 [node name="MainMenu" type="Control" unique_id=1052018930]
 layout_mode = 3
@@ -36,9 +36,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
-[node name="0" type="Sprite2D" parent="VBoxContainer" unique_id=1248100996]
-position = Vector2(160.5, 124)
-scale = Vector2(1.6588541, 1.6712962)
+[node name="FreepikPixelatedCaveBackgroundWithLayeredStalactites17764" type="Sprite2D" parent="VBoxContainer" unique_id=1840226389]
+position = Vector2(158.79199, 127.352005)
+scale = Vector2(0.6254062, 0.35771096)
 texture = ExtResource("2_7vrkn")
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=509675083]
