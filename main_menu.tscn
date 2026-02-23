@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cemrb5gacbvvl"]
 
 [ext_resource type="Script" uid="uid://p76jfofku8mh" path="res://script/main_menu.gd" id="1_m3r4o"]
-[ext_resource type="Texture2D" uid="uid://bug7aeng4o8hj" path="res://enemies/Skeleton/Sprite Sheets/freepik__pixelated-cave-background-with-layered-stalactites__17764.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://b7owixxhiankv" path="res://enemies/Skeleton/Sprite Sheets/freepik__1920x1080-subterranean-cave-scene-pixelised-depth-__17765.png" id="3_fu7sn"]
+[ext_resource type="Theme" uid="uid://cr8v5m7n4p2q1" path="res://PixelTheme.tres" id="4_pixel"]
 
 [node name="MainMenu" type="Control" unique_id=1052018930]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_pixel")
 script = ExtResource("1_m3r4o")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=56704784]
@@ -36,15 +38,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
-[node name="FreepikPixelatedCaveBackgroundWithLayeredStalactites17764" type="Sprite2D" parent="VBoxContainer" unique_id=1840226389]
-position = Vector2(158.79199, 127.352005)
-scale = Vector2(0.6254062, 0.35771096)
-texture = ExtResource("2_7vrkn")
+[node name="Freepik1920x1080SubterraneanCaveScenePixelisedDepth17765" type="Sprite2D" parent="VBoxContainer" unique_id=1903169960]
+position = Vector2(274.23996, 180.23996)
+scale = Vector2(0.62843746, 0.471211)
+texture = ExtResource("3_fu7sn")
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=509675083]
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(1, 0.9, 0.3, 1)
+theme_override_colors/font_outline_color = Color(0.2, 0.1, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
 text = "CAVES OF DARKNESS"
 horizontal_alignment = 1
 
