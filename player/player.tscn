@@ -239,7 +239,7 @@ height = 36.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hitbox"]
 size = Vector2(30, 24)
 
-[node name="Node2D" type="CharacterBody2D" unique_id=1344897844]
+[node name="Node2D" type="CharacterBody2D" unique_id=1344897844 groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_wodsf")
 

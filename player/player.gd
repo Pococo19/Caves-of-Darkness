@@ -40,6 +40,10 @@ func _on_frame_changed():
 		hitbox_collision.disabled = true
 
 func _ready():
+	add_to_group("Player")
+	if RoomChangeGlobal.Activate:
+		global_position = RoomChangeGlobal.PlayerPos
+		RoomChangeGlobal.Activate = false
 	current_state = State.Idle
 	anims.animation_finished.connect(_on_animation_finished)
 	anims.frame_changed.connect(_on_frame_changed)

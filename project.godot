@@ -22,6 +22,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://cpvw7563ffnod"
+LevelTransition="*uid://dmcnwfcy2ckci"
+RoomChangeGlobal="*uid://bby0ryl8rpwa3"
 
 [display]
 
@@ -84,6 +86,7 @@ special={
 2d_physics/layer_1="GROUND"
 2d_physics/layer_2="PLAYER"
 2d_physics/layer_3="ENEMY"
+2d_physics/layer_4="DOOR"
 
 [rendering]
 
