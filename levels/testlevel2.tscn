@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dr6gpl33iwfjq" path="res://tileset/Cave - RockCombinations1.png" id="13_ejarl"]
 [ext_resource type="Texture2D" uid="uid://btdikphwqja7r" path="res://tileset/Cave - SmallRocks.png" id="14_spc6g"]
 [ext_resource type="Texture2D" uid="uid://blc7tjgt0obqb" path="res://tileset/Square - Black.jpg" id="15_bpopw"]
+[ext_resource type="PackedScene" uid="uid://610vbi4qah7n" path="res://levels/door_area_2d.tscn" id="16_rhrh3"]
 [ext_resource type="Texture2D" uid="uid://dyek6dx18ar7c" path="res://tileset/Cave - BigRocks1.png" id="16_rm3jp"]
 [ext_resource type="Texture2D" uid="uid://1x0s50pm35ki" path="res://tileset/Cave - Floor 1.png" id="17_o85kn"]
 [ext_resource type="PackedScene" uid="uid://cbmiu6k0mnwd4" path="res://player/player.tscn" id="18_vmr8w"]
@@ -9736,7 +9737,7 @@ tile_map_data = PackedByteArray("AADf/9kAEAAAAAAAAADf/9oAEAAAAAAAAADf/9sAEAAAAAA
 tile_set = SubResource("TileSet_oi3di")
 
 [node name="Player" parent="." unique_id=358387626 instance=ExtResource("18_vmr8w")]
-position = Vector2(-196, -2017)
+position = Vector2(-196, -3027)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1513919437]
 offset = Vector2(0, -8.195)
@@ -9761,3 +9762,9 @@ environment = SubResource("Environment_ad6qy")
 
 [node name="GameScreen" parent="." unique_id=29179053 instance=ExtResource("22_aa1ql")]
 visible = false
+
+[node name="DoorArea2D" parent="." unique_id=447838663 instance=ExtResource("16_rhrh3")]
+position = Vector2(-196, 2513)
+collision_mask = 2
+ConnectedRoom = "res://levels/testlevel3.tscn"
+PlayerPos = Vector2(-181, -413)

@@ -9806,4 +9806,7 @@ position = Vector2(512.57654, -262.50302)
 [node name="GameScreen" parent="." unique_id=29179053 instance=ExtResource("22_0m2n4")]
 
 [node name="DoorArea2D" parent="." unique_id=447838663 instance=ExtResource("23_qksnc")]
-position = Vector2(1183, -66)
+position = Vector2(-661.5092, -38.350327)
+collision_mask = 2
+ConnectedRoom = "res://levels/testlevel3.tscn"
+PlayerPos = Vector2(244, -39)
