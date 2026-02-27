@@ -92,7 +92,7 @@ text = "OPTIONS"
 horizontal_alignment = 1
 
 [node name="Spacer1" type="Control" parent="OptionsContainer" unique_id=160076276]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 
 [node name="MasterLabel" type="Label" parent="OptionsContainer" unique_id=314896817]

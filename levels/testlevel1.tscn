@@ -9787,30 +9787,75 @@ environment = SubResource("Environment_ad6qy")
 
 [node name="Ennemies" type="Node2D" parent="." unique_id=1250503504]
 
-[node name="Enemy" parent="Ennemies" unique_id=360651525 instance=ExtResource("16_beyeq")]
+[node name="Slime1" parent="Ennemies" unique_id=360651525 node_paths=PackedStringArray("patrol") instance=ExtResource("16_beyeq")]
 position = Vector2(-164.80002, -33.799988)
 collision_layer = 128
+patrol = NodePath("Patrol")
 
-[node name="skeleton" parent="Ennemies" unique_id=515678505 instance=ExtResource("20_rvrsf")]
+[node name="Patrol" type="Node2D" parent="Ennemies/Slime1" unique_id=581750193]
+
+[node name="Point1" type="Marker2D" parent="Ennemies/Slime1/Patrol" unique_id=1923611235]
+position = Vector2(-39.071632, -1.1626015)
+
+[node name="Point2" type="Marker2D" parent="Ennemies/Slime1/Patrol" unique_id=1716715295]
+position = Vector2(93.69183, -0.9875872)
+
+[node name="Skeleton1" parent="Ennemies" unique_id=515678505 node_paths=PackedStringArray("patrol") instance=ExtResource("20_rvrsf")]
 position = Vector2(-363.12357, -225.00304)
 collision_layer = 128
+patrol = NodePath("Patrol")
 
-[node name="skeleton2" parent="Ennemies" unique_id=1792613656 instance=ExtResource("20_rvrsf")]
+[node name="Patrol" type="Node2D" parent="Ennemies/Skeleton1" unique_id=1174043800]
+
+[node name="Point1" type="Marker2D" parent="Ennemies/Skeleton1/Patrol" unique_id=909808298]
+position = Vector2(-66.47387, 3.1560318)
+
+[node name="Point2" type="Marker2D" parent="Ennemies/Skeleton1/Patrol" unique_id=1765886025]
+position = Vector2(130.2059, 2.2496567)
+
+[node name="Skeleton2" parent="Ennemies" unique_id=1792613656 node_paths=PackedStringArray("patrol") instance=ExtResource("20_rvrsf")]
 position = Vector2(832.6765, -338.803)
 collision_layer = 128
+patrol = NodePath("Patrol")
 
-[node name="Slime" parent="Ennemies" unique_id=1006386234 instance=ExtResource("16_beyeq")]
+[node name="Patrol" type="Node2D" parent="Ennemies/Skeleton2" unique_id=1280474403]
+
+[node name="Point1" type="Marker2D" parent="Ennemies/Skeleton2/Patrol" unique_id=1878120047]
+position = Vector2(-65.52085, -0.6560824)
+
+[node name="Point2" type="Marker2D" parent="Ennemies/Skeleton2/Patrol" unique_id=448060347]
+position = Vector2(69.52982, -1.2448003)
+
+[node name="Slime3" parent="Ennemies" unique_id=1006386234 node_paths=PackedStringArray("patrol") instance=ExtResource("16_beyeq")]
 position = Vector2(112.17648, -273.00302)
 collision_layer = 128
+patrol = NodePath("Patrol")
 
-[node name="Slime2" parent="Ennemies" unique_id=2322101 instance=ExtResource("16_beyeq")]
+[node name="Patrol" type="Node2D" parent="Ennemies/Slime3" unique_id=2038437319]
+
+[node name="Point1" type="Marker2D" parent="Ennemies/Slime3/Patrol" unique_id=1030709670]
+position = Vector2(-39.071632, 2.8373978)
+
+[node name="Point2" type="Marker2D" parent="Ennemies/Slime3/Patrol" unique_id=229009864]
+position = Vector2(53.691833, -1.9875872)
+
+[node name="Slime4" parent="Ennemies" unique_id=2322101 node_paths=PackedStringArray("patrol") instance=ExtResource("16_beyeq")]
 position = Vector2(512.57654, -240.50302)
 collision_layer = 128
+patrol = NodePath("Patrol")
+
+[node name="Patrol" type="Node2D" parent="Ennemies/Slime4" unique_id=968658141]
+
+[node name="Point1" type="Marker2D" parent="Ennemies/Slime4/Patrol" unique_id=1481696077]
+position = Vector2(-39.071632, 2.8373978)
+
+[node name="Point2" type="Marker2D" parent="Ennemies/Slime4/Patrol" unique_id=1311631391]
+position = Vector2(43.995422, 0.0124127865)
 
 [node name="GameScreen" parent="." unique_id=29179053 instance=ExtResource("22_0m2n4")]
 
 [node name="DoorArea2D" parent="." unique_id=447838663 instance=ExtResource("23_qksnc")]
-position = Vector2(-661.5092, -38.350327)
+position = Vector2(-665.5092, -38.350327)
 collision_mask = 2
 ConnectedRoom = "res://levels/testlevel3.tscn"
 PlayerPos = Vector2(244, -39)
