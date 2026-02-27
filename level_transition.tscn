@@ -9,4 +9,5 @@ script = ExtResource("1_jywac")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1952429406]
 offset_right = 640.0
 offset_bottom = 360.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0)

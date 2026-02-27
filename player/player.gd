@@ -14,6 +14,7 @@ const WALL_JUMP_PUSH = 400
 enum State { Idle, Run, Jump, Fall, Attack, Slide, Wall, Special }
 
 var current_state
+var gravity_modifier = 1.0
 
 func _on_animation_finished():
 	if current_state == State.Attack or current_state == State.Slide or current_state == State.Special:
@@ -21,19 +22,14 @@ func _on_animation_finished():
 		hitbox_collision.disabled = true
 
 func _on_frame_changed():
-	#print("DEBUG: Frame changed - Animation: ", anims.animation, " Frame: ", anims.frame, " State: ", current_state)
 	if current_state == State.Attack:
-		# Active la hitbox sur les frames de frappe (frames 4-7)
 		if anims.frame >= 4 and anims.frame <= 7:
 			hitbox_collision.disabled = false
-			#print("DEBUG: Hitbox ENABLED on frame ", anims.frame)
 		else:
 			hitbox_collision.disabled = true
 	elif current_state == State.Special:
-		# Active la hitbox sur les frames de frappe (frames 5-9)
 		if anims.frame >= 5 and anims.frame <= 9:
 			hitbox_collision.disabled = false
-			#print("DEBUG: Hitbox ENABLED on frame ", anims.frame)
 		else:
 			hitbox_collision.disabled = true
 	else:
@@ -48,6 +44,12 @@ func _ready():
 	anims.animation_finished.connect(_on_animation_finished)
 	anims.frame_changed.connect(_on_frame_changed)
 	hitbox_collision.disabled = true
+	
+	var scene_path = get_tree().current_scene.scene_file_path
+	if scene_path != null and scene_path.contains("testlevel2"):
+		gravity_modifier = 0.3
+	else:
+		gravity_modifier = 1.0
 	#print("DEBUG: Player ready - Hitbox setup complete")
 	
 func _physics_process(_delta):
@@ -73,7 +75,11 @@ func player_falling(_delta):
 		grav = 1000
 	
 	if !is_on_floor():
-		velocity.y += grav * _delta
+		if gravity_modifier < 1.0:
+			# Constant slow fall speed for testlevel2
+			velocity.y = 400
+		else:
+			velocity.y += grav * _delta
 
 	if velocity.y > 0 and current_state != State.Attack and current_state != State.Special and current_state != State.Wall:
 		current_state = State.Fall

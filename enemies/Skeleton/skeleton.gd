@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const GRAVITY = 1000
-var health = 10
+var health = 6
 @onready var area = $Hurtbox
 @onready var anims = $AnimatedSprite2D
 
@@ -10,7 +10,10 @@ enum State { Idle, Walk, Hurt, Die }
 var current_state
 
 func _on_animation_finished():
-	if current_state == State.Hurt or current_state == State.Die:
+	if current_state == State.Die:
+		queue_free()
+		return
+	if current_state == State.Hurt:
 		current_state = State.Idle
 
 func _ready():
