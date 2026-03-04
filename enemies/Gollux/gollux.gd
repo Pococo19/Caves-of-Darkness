@@ -1,17 +1,20 @@
 extends CharacterBody2D
 
 const GRAVITY = 1000
-const SPEED = 15
-var health = 2
+const SPEED = 35
+var max_health = 20
+var health = 20
 @onready var area = $Hurtbox
 @onready var anims = $AnimatedSprite2D
 
 @export var patrol: Node
 
-enum State { Idle, Walk, Hurt, Die, Attack }
+enum State { Idle, Walk, Hurt, Die, Attack, AttackB, Heal }
+enum Phase { One, Two, Three }
 
 var current_state
-var direction: Vector2 = Vector2.LEFT
+var current_phase = Phase.One
+var direction: Vector2 = Vector2.RIGHT
 var number_pts: int
 var pts_pos: Array[Vector2]
 var current_point: Vector2
@@ -20,7 +23,11 @@ var player_in_range: bool = false
 var attack_direction: float = 0
 var attack_cooldown: float = 0
 var is_lunging: bool = false
-var lunge_speed: float = 200
+var lunge_speed: float = 250
+var attack_combo_count: int = 0
+var heal_cooldown: float = 0
+var can_heal: bool = true
+var rage_mode: bool = false
 
 func _on_animation_finished():
 	if current_state == State.Die:
@@ -28,13 +35,19 @@ func _on_animation_finished():
 		return
 	if current_state == State.Hurt:
 		current_state = State.Walk
-	if current_state == State.Attack:
+	if current_state == State.Attack or current_state == State.AttackB:
 		is_lunging = false
-		if player_in_range:
-			current_state = State.Attack
+		attack_combo_count += 1
+		if player_in_range and attack_combo_count < 3:
+			if randf() > 0.5:
+				current_state = State.AttackB
+			else:
+				current_state = State.Attack
 		else:
+			attack_combo_count = 0
 			current_state = State.Walk
-
+	if current_state == State.Heal:
+		current_state = State.Walk
 
 func _ready():
 	if patrol != null:
@@ -52,6 +65,14 @@ func _physics_process(delta: float):
 	if attack_cooldown > 0:
 		attack_cooldown -= delta
 	
+	if heal_cooldown > 0:
+		heal_cooldown -= delta
+	
+	check_phase()
+	
+	if current_state != State.Die and current_state != State.Hurt:
+		try_heal()
+	
 	if patrol != null and number_pts > 0:
 		enemy_walk(delta)
 	move_and_slide()
@@ -62,9 +83,12 @@ func enemy_gravity(delta : float):
 	velocity.y += GRAVITY * delta
 
 func _on_hurtbox_area_entered(area):
+	if current_state == State.Heal:
+		return
+		
 	health -= 1
-	print("Hit!!!")
-	print(health)
+	print("Gollux Hit!!! Health: ", health)
+	
 	if health == 0:
 		current_state = State.Die
 		return
@@ -82,25 +106,37 @@ func enemy_animations():
 	if current_state == State.Die:
 		anims.play("die")
 	if current_state == State.Attack:
-		anims.play("attack")
-	
+		anims.play("attack_A")
+	if current_state == State.AttackB:
+		anims.play("attack_B")
+	if current_state == State.Heal:
+		anims.play("heal")
 
 func enemy_walk(delta: float):
-	if current_state == State.Hurt or current_state == State.Die:
+	if current_state == State.Hurt or current_state == State.Die or current_state == State.Heal:
 		velocity.x = 0
 		return
 	
-	if current_state == State.Attack:
+	if current_state == State.Attack or current_state == State.AttackB:
 		if is_lunging:
-			velocity.x = attack_direction * lunge_speed
+			var lunge_multiplier = 1.0
+			if rage_mode:
+				lunge_multiplier = 1.5
+			velocity.x = attack_direction * lunge_speed * lunge_multiplier
 		else:
 			velocity.x = 0
 		return
 	
 	if player_in_range and attack_cooldown <= 0:
-		current_state = State.Attack
+		if randf() > 0.6:
+			current_state = State.AttackB
+		else:
+			current_state = State.Attack
 		is_lunging = true
-		attack_cooldown = 2.0
+		var cooldown_multiplier = 1.0
+		if rage_mode:
+			cooldown_multiplier = 0.5
+		attack_cooldown = 1.5 * cooldown_multiplier
 		return
 		
 	var distance = global_position.distance_to(current_point)
@@ -111,7 +147,10 @@ func enemy_walk(delta: float):
 		direction = (current_point - global_position).normalized()
 	else:
 		direction = (current_point - global_position).normalized()
-		velocity.x = direction.x * SPEED
+		var speed_multiplier = 1.0
+		if rage_mode:
+			speed_multiplier = 1.3
+		velocity.x = direction.x * SPEED * speed_multiplier
 		current_state = State.Walk
 
 func _on_attack_area_2d_body_entered(body: Node2D):
@@ -125,3 +164,30 @@ func _on_attack_area_2d_body_entered(body: Node2D):
 func _on_attack_area_2d_body_exited(body: Node2D):
 	if body.is_in_group("Player"):
 		player_in_range = false
+
+func check_phase():
+	var health_percent = float(health) / float(max_health)
+	
+	if health_percent <= 0.33 and current_phase != Phase.Three:
+		current_phase = Phase.Three
+		rage_mode = true
+		print("Gollux Phase 3 - RAGE MODE!")
+	elif health_percent <= 0.66 and current_phase == Phase.One:
+		current_phase = Phase.Two
+		print("Gollux Phase 2!")
+
+func try_heal():
+	if not can_heal or heal_cooldown > 0:
+		return
+	
+	var health_percent = float(health) / float(max_health)
+	
+	if health_percent < 0.4 and current_state != State.Attack and current_state != State.AttackB:
+		if randf() < 0.15:
+			current_state = State.Heal
+			var heal_amount = 3
+			if current_phase == Phase.Three:
+				heal_amount = 2
+			health = min(health + heal_amount, max_health)
+			heal_cooldown = 15.0
+			print("Gollux heals! Health: ", health)

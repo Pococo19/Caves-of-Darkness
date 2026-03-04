@@ -8,7 +8,7 @@ var health = 3
 
 @export var patrol: Node
 
-enum State { Idle, Walk, Hurt, Die }
+enum State { Idle, Walk, Hurt, Die, Attack }
 
 var current_state
 var direction: Vector2 = Vector2.RIGHT
@@ -16,6 +16,7 @@ var number_pts: int
 var pts_pos: Array[Vector2]
 var current_point: Vector2
 var current_point_pos: int = 0
+var player_in_range: bool = false
 
 func _on_animation_finished():
 	if current_state == State.Die:
@@ -23,6 +24,11 @@ func _on_animation_finished():
 		return
 	if current_state == State.Hurt:
 		current_state = State.Walk
+	if current_state == State.Attack:
+		if player_in_range:
+			current_state = State.Attack
+		else:
+			current_state = State.Walk
 
 func _ready():
 	if patrol != null:
@@ -65,10 +71,17 @@ func enemy_animations():
 		anims.play("hurt")
 	if current_state == State.Die:
 		anims.play("die")
+	if current_state == State.Attack:
+		anims.play("attack")
 
 func enemy_walk(delta: float):
-	if current_state == State.Hurt or current_state == State.Die:
+	if current_state == State.Hurt or current_state == State.Die or current_state == State.Attack:
 		velocity.x = 0
+		return
+	
+	if player_in_range:
+		velocity.x = 0
+		current_state = State.Attack
 		return
 		
 	var distance = global_position.distance_to(current_point)
@@ -81,3 +94,11 @@ func enemy_walk(delta: float):
 		direction = (current_point - global_position).normalized()
 		velocity.x = direction.x * SPEED
 		current_state = State.Walk
+
+func _on_attack_area_2d_body_entered(body: Node2D):
+	if body.is_in_group("Player"):
+		player_in_range = true
+
+func _on_attack_area_2d_body_exited(body: Node2D):
+	if body.is_in_group("Player"):
+		player_in_range = false
